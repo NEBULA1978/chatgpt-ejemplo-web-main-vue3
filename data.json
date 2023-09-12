@@ -2,61 +2,61 @@
     "bicicletas": [
         {
             "nombre": "Rockrider",
-            "modelo": "Bicicleta de montaña",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6502_100_1_1.jpg",
             "precio": 5
         },
         {
             "nombre": "Specialized",
-            "modelo": "Bicicleta de carretera",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6550_96_1_1.jpg",
             "precio": 7
         },
         {
             "nombre": "Trek",
-            "modelo": "Bicicleta de paseo",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6554_98_1_1.jpg",
             "precio": 3
         },
         {
             "nombre": "Giant",
-            "modelo": "Bicicleta de montaña",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6627_48_1_1.jpg",
             "precio": 5
         },
         {
             "nombre": "Cannondale",
-            "modelo": "Bicicleta de carretera",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6681_07_1_1.jpg",
             "precio": 7
         },
         {
             "nombre": "Scott",
-            "modelo": "Bicicleta de paseo",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6683_126_1_1.jpg",
             "precio": 3
         },
         {
             "nombre": "Cube",
-            "modelo": "Bicicleta de montaña",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6690_01_1_1.jpg",
             "precio": 5
         },
         {
             "nombre": "Bianchi",
-            "modelo": "Bicicleta de carretera",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6696_98_1_1.jpg",
             "precio": 7
         },
         {
             "nombre": "Merida",
-            "modelo": "Bicicleta de paseo",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/6698_264_1_1.jpg",
             "precio": 3
         },
         {
             "nombre": "Kona",
-            "modelo": "Bicicleta de montaña",
+            "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/atomic.jpg",
             "precio": 5
         }
