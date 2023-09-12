@@ -59,6 +59,12 @@
             "modelo": "Camisetas Manga Corta",
             "img": "img/camisetas-mangacorta/atomic.jpg",
             "precio": 5
+        },
+        {
+            "nombre": "BRENDA CA6535",
+            "modelo": "Camisetas De Tirantes",
+            "img": "img/camisetas-tirantes/BRENDA CA6535.jpg",
+            "precio": 5
         }
     ]
 }
