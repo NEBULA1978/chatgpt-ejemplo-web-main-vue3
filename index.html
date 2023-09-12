@@ -1,162 +1,357 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Camisetas personalizadas</title>
-    <style>
+    <head>
+        <title>Camisetas personalizadas</title>
+        <style>
         /* Tu estilo CSS existente aquí */
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  nav {
-    background-color: #FFA07A;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  nav a:hover {
-    background-color: #ff7f50;
-  }
-  
-  main {
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffb6c1;
-  }
-  
-  section h2 {
-    margin-top: 0;
-  }
-  
-  footer {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-
-  
-  #bicicletas-contenedor {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-}
-
-
-.bicicleta {
-    width: 100%;
-}
-
-.bicicleta img {
-    width: 100%;
-    object-fit: cover;
-}
-
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        nav {
+            background-color: #FFA07A;
+            text-align: center;
+        }
+        
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
+        
+        nav a:hover {
+            background-color: #ff7f50;
+        }
+        
+        main {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffb6c1;
+        }
+        
+        section h2 {
+            margin-top: 0;
+        }
+        
+        footer {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        #bicicletas-contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+        
+        .bicicleta {
+            width: 100%;
+        }
+        
+        .bicicleta img {
+            width: 100%;
+            object-fit: cover;
+        }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Camisetas personalizadas</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="#bicicletas">Camisetas personalizadas</a></li>
-            <li><a href="#ubicacion">Ubicación</a></li>
-            <li><a href="#reservas">Reservas</a></li>
-        </ul>
-    </nav>
-    <main>
-        <select id="filtro-modelo">
-            <option value="">Todos los modelos</option>
-            <option value="Camisetas Manga Corta">Camisetas Manga Corta</option>
-            <option value="Camisetas De Tirantes">Camisetas De Tirantes</option>
-            <option value="Camisetas Manga Larga">Camisetas Manga Larga</option>
-            <option value="Bicicleta de montaña">Bicicleta de montaña</option>
-            <option value="Bicicleta de carretera">Bicicleta de carretera</option>
-            <option value="Bicicleta de paseo">Bicicleta de paseo</option>
-        </select>
+    </head>
+    <body>
+        <header>
+            <h1>Camisetas personalizadas</h1>
+        </header>
 
-        <select id="filtro-precio">
-            <option value="0">Todos los precios</option>
-            <option value="5">Hasta $5</option>
-            <option value="10">Hasta $10</option>
-            <option value="15">Hasta $15</option>
-        </select>
+        <div id="app">
+            <!-- Aquí se mostrará el contenido generado por Vue -->
+            {{ mensaje }}
+        </div>
 
-        <section id="bicicletas">
-            <h2>Bicicletas disponibles</h2>
-            <div id="bicicletas-contenedor"></div>
-        </section>
+        <nav>
+            <ul>
+                <li><a href="#bicicletas">Camisetas personalizadas</a></li>
+                <li><a href="#ubicacion">Ubicación</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+            </ul>
+        </nav>
+        <main>
+            <select id="filtro-modelo">
+                <option value>Todos los modelos</option>
+                <option value="Camisetas Manga Corta">Camisetas Manga Corta</option>
+                <option value="Camisetas De Tirantes">Camisetas De Tirantes</option>
+                <option value="Camisetas Manga Larga">Camisetas Manga Larga</option>
+                <option value="Bicicleta de montaña">Bicicleta de montaña</option>
+                <option value="Bicicleta de carretera">Bicicleta de carretera</option>
+                <option value="Bicicleta de paseo">Bicicleta de paseo</option>
+            </select>
 
-        <section id="ubicacion">
-            <h2>Ubicación</h2>
-            <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de XYZ.</p>
-        </section>
+            <select id="filtro-precio">
+                <option value="0">Todos los precios</option>
+                <option value="5">Hasta $5</option>
+                <option value="10">Hasta $10</option>
+                <option value="15">Hasta $15</option>
+            </select>
 
-        <section id="reservas">
-            <h2>Reservas</h2>
-            <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o envíenos un correo electrónico a info@bicyclerentals.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>Copyright © 2021 Bicycle Rentals</p>
-    </footer>
-    
-    <!-- Agrega el script para cargar Vue 3 desde CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.prod.js"></script>
-    
-    <!-- Agrega el script para cargar Vue Router 4 desde CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/vue-router@4.0.11/dist/vue-router.global.min.js"></script>
-    
-    <!-- Agrega tu archivo de configuración de Vue Router y otros scripts de JavaScript aquí -->
-    <script src="router.js"></script>
-    <script src="app.js"></script> <!-- Si tienes un archivo de JavaScript separado para tu aplicación Vue -->
+            <section id="bicicletas">
+                <h2>Bicicletas disponibles</h2>
+                <div id="bicicletas-contenedor"></div>
+            </section>
 
-    <!-- Script adicional para cargar y mostrar las imágenes -->
-    <script>
+            <section id="ubicacion">
+                <h2>Ubicación</h2>
+                <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de
+                    XYZ.</p>
+            </section>
+
+            <section id="reservas">
+                <h2>Reservas</h2>
+                <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o
+                    envíenos un correo electrónico a info@bicyclerentals.com</p>
+            </section>
+        </main>
+        <footer>
+            <p>Copyright © 2021 Bicycle Rentals</p>
+        </footer>
+
+        <!-- Agrega el script para cargar Vue 3 desde CDN -->
+        <script
+            src="https://cdn.jsdelivr.net/npm/vue@3.2.0/dist/vue.global.prod.js"></script>
+
+        <!-- Agrega tu archivo de configuración de Vue Router y otros scripts de JavaScript aquí -->
+        <script src="router.js"></script>
+
+        <script>
+        // Crear una nueva instancia de Vue
+        const app = Vue.createApp({
+            data() {
+                return {
+                    mensaje: '¡Hola, mundo desde Vue 3!'
+                }
+            }
+        })
+
+        // Montar la aplicación Vue en un elemento HTML existente
+        app.mount('#app')
+    </script>
+
+        <script>
         document.addEventListener("DOMContentLoaded", function () {
             const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
 
-            // Obtener los datos de las bicicletas
-            fetch("data.json")
-                .then(response => response.json())
-                .then(data => {
-                    // Almacenar los datos en una variable global
-                    window.bicicletas = data.bicicletas;
-                    // Mostrar las bicicletas en la página
-                    mostrarBicicletas();
-                })
-                .catch(error => console.error(error));
+            // Obtener los datos de las bicicletas (simulado con un objeto en lugar de una solicitud fetch)
+            const data = {
+                bicicletas: [
+       {
+            nombre: "ATOMIC 150 CA6424",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6502_100_1_1.jpg",
+            precio: 5
+        },
+        {
+            nombre: "JAMAICA CA6627",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6550_96_1_1.jpg",
+            precio: 7
+        },
+        {
+            nombre: "BEAGLE CA6554",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6554_98_1_1.jpg",
+            precio: 3
+        },
+        {
+            nombre: "CAPRI CA6683",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6627_48_1_1.jpg",
+            precio: 5
+        },
+        {
+            nombre: "STAFFORD CA6681",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6681_07_1_1.jpg",
+            precio: 7
+        },
+        {
+            nombre: "DOGO PREMIUM CA6502",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6683_126_1_1.jpg",
+            precio: 3
+        },
+        {
+            nombre: "BRACO CA6550",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6690_01_1_1.jpg",
+            precio: 5
+        },
+        {
+            nombre: "GOLDEN WOMAN CA6696",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6696_98_1_1.jpg",
+            precio: 7
+        },
+        {
+            nombre: "GOLDEN CA6690",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/6698_264_1_1.jpg",
+            precio: 3
+        },
+        {
+            nombre: "BREDA CA6698",
+            modelo: "Camisetas Manga Corta",
+            img: "img/camisetas-mangacorta/atomic.jpg",
+            precio: 5
+        },
+        {
+            nombre: "BRENDA CA6535",
+            modelo: "Camisetas De Tirantes",
+            img: "img/camisetas-tirantes/BRENDA CA6535.jpg",
+            precio: 5
+        },
+        {
+            nombre: "carolinaca6517",
+            modelo: "Camisetas De Tirantes",
+            img: "img/camisetas-tirantes/carolinaca6517.jpg",
+            precio: 5
+        },
+        {
+            nombre: "NARA CA6536",
+            modelo: "Camisetas De Tirantes",
+            img: "img/camisetas-tirantes/NARA CA6536.jpg",
+            precio: 5
+        },
+        {
+            nombre: "TEXAS CA6545",
+            modelo: "Camisetas De Tirantes",
+            img: "img/camisetas-tirantes/TEXAS CA6545.jpg",
+            precio: 5
+        },
+        {
+            nombre: "BABY L",
+            modelo: "Camisetas Manga Larga",
+            img: "img/camisetas-manga-larga/ BABY L.jpg",
+            precio: 5
+        },
+        {
+            nombre: "EXTREME CA1217",
+            modelo: "Camisetas Manga Larga",
+            img: "img/camisetas-manga-larga/EXTREME CA1217.jpg",
+            precio: 5
+        },
+        {
+            nombre: "EXTREME WOMAN C",
+            modelo: "Camisetas Manga Larga",
+            img: "img/camisetas-manga-larga/EXTREME WOMAN C.jpg",
+            precio: 5
+        },
+        {
+    nombre: "HONEY L",
+    modelo: "Camisetas Manga Larga",
+    img: "img/camisetas-manga-larga/HONEY L.jpg",
+    precio: 5
+},
+{
+    nombre: "POINTER  CA1204",
+    modelo: "Camisetas Manga Larga",
+    img: "img/camisetas-manga-larga/POINTER  CA1204.jpg",
+    precio: 5
+},
+{
+    nombre: "SHIBA CA1219",
+    modelo: "Camisetas Manga Larga",
+    img: "img/camisetas-manga-larga/SHIBA CA1219.jpg",
+    precio: 5
+},
+{
+    nombre: "Rockrider",
+    modelo: "Bicicleta de montaña",
+    img: "img/1-bicicleta.png",
+    precio: 5
+},
+{
+    nombre: "Specialized",
+    modelo: "Bicicleta de carretera",
+    img: "img/2-bicicleta.png",
+    precio: 7
+},
+{
+    nombre: "Trek",
+    modelo: "Bicicleta de paseo",
+    img: "img/3-bicicleta.png",
+    precio: 3
+},
+{
+    nombre: "Giant",
+    modelo: "Bicicleta de montaña",
+    img: "img/4-bicicleta.png",
+    precio: 5
+},
+{
+    nombre: "Cannondale",
+    modelo: "Bicicleta de carretera",
+    img: "img/5-bicicleta.png",
+    precio: 7
+},
+{
+    nombre: "Scott",
+    modelo: "Bicicleta de paseo",
+    img: "img/6-bicicleta.png",
+    precio: 3
+},
+{
+    nombre: "Cube",
+    modelo: "Bicicleta de montaña",
+    img: "img/7-bicicleta.png",
+    precio: 5
+},
+{
+    nombre: "Bianchi",
+    modelo: "Bicicleta de carretera",
+    img: "img/8-bicicleta.png",
+    precio: 7
+},
+{
+    nombre: "Merida",
+    modelo: "Bicicleta de paseo",
+    img: "img/9-bicicleta.png",
+    precio: 3
+},
+{
+    nombre: "Kona",
+    modelo: "Bicicleta de montaña",
+    img: "img/10-bicicleta.png",
+    precio: 5
+}
+                    
+                    // Agrega más bicicletas aquí
+                ],
+            };
+
+            // Almacenar los datos en una variable global
+            window.bicicletas = data.bicicletas;
 
             // Función para mostrar las bicicletas en la página
             function mostrarBicicletas() {
@@ -205,51 +400,10 @@
             // Agregar eventos a los filtros para que al cambiar su valor, se vuelva a mostrar las bicicletas
             document.getElementById("filtro-modelo").addEventListener("change", mostrarBicicletas);
             document.getElementById("filtro-precio").addEventListener("change", mostrarBicicletas);
+
+            // Mostrar las bicicletas al cargar la página
+            mostrarBicicletas();
         });
-
-        // Función para mostrar las bicicletas en la página
-        function mostrarBicicletas() {
-            const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
-            bicicletasContenedor.innerHTML = "";
-
-            // Obtener los valores seleccionados en los filtros
-            const filtroModelo = document.getElementById("filtro-modelo").value;
-            const filtroPrecio = parseFloat(document.getElementById("filtro-precio").value);
-
-            // Recorrer cada bicicleta
-            window.bicicletas.forEach(function (bicicleta) {
-                // Comprobar si la bicicleta cumple con los criterios de los filtros
-                if ((filtroModelo === "" || bicicleta.modelo === filtroModelo) && (filtroPrecio === 0 || bicicleta.precio <= filtroPrecio)) {
-                    // Crear un elemento div para la bicicleta
-                    const bicicletaDiv = document.createElement("div");
-                    bicicletaDiv.classList.add("bicicleta");
-                    
-                    // Crear una imagen para la bicicleta
-                    const bicicletaImg = document.createElement("img");
-                    bicicletaImg.src = bicicleta.img; // Asegúrate de que la ruta sea correcta
-                    bicicletaImg.alt = bicicleta.modelo;
-                    bicicletaDiv.appendChild(bicicletaImg);
-
-                    // Crear un h3 para el nombre de la bicicleta
-                    const bicicletaNombre = document.createElement("h3");
-                    bicicletaNombre.innerHTML = bicicleta.nombre;
-                    bicicletaDiv.appendChild(bicicletaNombre);
-
-                    // Crear un p para el modelo de la bicicleta
-                    const bicicletaModel = document.createElement("p");
-                    bicicletaModel.innerHTML = bicicleta.modelo;
-                    bicicletaDiv.appendChild(bicicletaModel);
-
-                    // Crear un p para el precio de la bicicleta
-                    const bicicletaPrice = document.createElement("p");
-                    bicicletaPrice.innerHTML = "$" + bicicleta.precio;
-                    bicicletaDiv.appendChild(bicicletaPrice);
-
-                    // Agregar el elemento div a la página
-                    bicicletasContenedor.appendChild(bicicletaDiv);
-                }
-            });
-        }
     </script>
-</body>
+    </body>
 </html>
