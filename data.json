@@ -65,6 +65,12 @@
             "modelo": "Camisetas De Tirantes",
             "img": "img/camisetas-tirantes/BRENDA CA6535.jpg",
             "precio": 5
+        },
+        {
+            "nombre": "BABY L",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/ BABY L.jpg",
+            "precio": 5
         }
     ]
 }
