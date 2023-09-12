@@ -67,6 +67,24 @@
             "precio": 5
         },
         {
+            "nombre": "carolinaca6517",
+            "modelo": "Camisetas De Tirantes",
+            "img": "img/camisetas-tirantes/carolinaca6517.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "NARA CA6536",
+            "modelo": "Camisetas De Tirantes",
+            "img": "img/camisetas-tirantes/NARA CA6536.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "TEXAS CA6545",
+            "modelo": "Camisetas De Tirantes",
+            "img": "img/camisetas-tirantes/TEXAS CA6545.jpg",
+            "precio": 5
+        }
+        ,{
             "nombre": "BABY L",
             "modelo": "Camisetas Manga Larga",
             "img": "img/camisetas-manga-larga/ BABY L.jpg",
