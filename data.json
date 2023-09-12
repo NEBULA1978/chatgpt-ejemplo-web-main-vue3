@@ -84,10 +84,41 @@
             "img": "img/camisetas-tirantes/TEXAS CA6545.jpg",
             "precio": 5
         }
-        ,{
+        ,
+        {
             "nombre": "BABY L",
             "modelo": "Camisetas Manga Larga",
             "img": "img/camisetas-manga-larga/ BABY L.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "EXTREME CA1217",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/EXTREME CA1217.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "EXTREME WOMAN C",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/EXTREME WOMAN C.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "HONEY L",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/HONEY L.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "POINTER  CA1204",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/POINTER  CA1204.jpg",
+            "precio": 5
+        },
+        {
+            "nombre": "SHIBA CA1219",
+            "modelo": "Camisetas Manga Larga",
+            "img": "img/camisetas-manga-larga/SHIBA CA1219.jpg",
             "precio": 5
         }
     ]
