@@ -1,92 +1,88 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <title>Camisetas personalizadas</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@3.2.20"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
 
-    <head>
-        <title>Camisetas personalizadas</title>
-        <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-        <style>
-            body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  nav {
-    background-color: #FFA07A;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  nav a:hover {
-    background-color: #ff7f50;
-  }
-  
-  main {
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffb6c1;
-  }
-  
-  section h2 {
-    margin-top: 0;
-  }
-  
-  footer {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
+        header {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
 
-  
-  #bicicletas-contenedor {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-}
+        nav {
+            background-color: #FFA07A;
+            text-align: center;
+        }
 
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-.bicicleta {
-    width: 100%;
-}
+        nav li {
+            display: inline-block;
+            margin-right: 10px;
+        }
 
-.bicicleta img {
-    width: 100%;
-    object-fit: cover;
-}
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
 
-        </style>
-    </head>
+        nav a:hover {
+            background-color: #ff7f50;
+        }
 
-    <body>
+        main {
+            margin: 0 auto;
+            max-width: 800px;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #ffb6c1;
+        }
+
+        section h2 {
+            margin-top: 0;
+        }
+
+        footer {
+            background-color: #8B0000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        #bicicletas-contenedor {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 10px;
+        }
+
+        .bicicleta {
+            width: 100%;
+        }
+
+        .bicicleta img {
+            width: 100%;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
         <header>
             <h1>Camisetas personalizadas</h1>
         </header>
@@ -98,22 +94,17 @@
             </ul>
         </nav>
         <main>
-
-            <!-- Filtro por modelo -->
-            <select id="filtro-modelo">
-                <option value>Todos los modelos</option>
+            <select v-model="filtroModelo">
+                <option value="">Todos los modelos</option>
                 <option value="Camisetas Manga Corta">Camisetas Manga Corta</option>
                 <option value="Camisetas De Tirantes">Camisetas De Tirantes</option>
                 <option value="Camisetas Manga Larga">Camisetas Manga Larga</option>
-
                 <option value="Bicicleta de montaña">Bicicleta de montaña</option>
                 <option value="Bicicleta de carretera">Bicicleta de carretera</option>
                 <option value="Bicicleta de paseo">Bicicleta de paseo</option>
-
             </select>
 
-            <!-- Filtro por precio -->
-            <select id="filtro-precio">
+            <select v-model="filtroPrecio">
                 <option value="0">Todos los precios</option>
                 <option value="5">Hasta $5</option>
                 <option value="10">Hasta $10</option>
@@ -122,90 +113,64 @@
 
             <section id="bicicletas">
                 <h2>Bicicletas disponibles</h2>
-                <div id="bicicletas-contenedor"></div>
+                <div id="bicicletas-contenedor">
+                    <div class="bicicleta" v-for="bicicleta in bicicletasFiltradas" :key="bicicleta.nombre">
+                        <img :src="bicicleta.img" :alt="bicicleta.modelo">
+                        <h3>{{ bicicleta.nombre }}</h3>
+                        <p>{{ bicicleta.modelo }}</p>
+                        <p>{{ '$' + bicicleta.precio }}</p>
+                    </div>
+                </div>
             </section>
 
             <section id="ubicacion">
                 <h2>Ubicación</h2>
-                <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de
-                    XYZ.</p>
+                <p>Nuestra tienda se encuentra en la calle 123, en la ciudad de XYZ.</p>
             </section>
 
             <section id="reservas">
                 <h2>Reservas</h2>
-                <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o
-                    envíenos un correo electrónico a
-                    info@bicyclerentals.com</p>
+                <p>Para hacer una reserva, por favor llámenos al 555-555-5555 o envíenos un correo electrónico a info@bicyclerentals.com</p>
             </section>
         </main>
         <footer>
             <p>Copyright © 2021 Bicycle Rentals</p>
         </footer>
-        <!-- <script src="main.js"></script> -->
-        <script>
-            const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
+    </div>
 
-// Obtener los datos de las bicicletas
-fetch("data.json")
-    .then(response => response.json())
-    .then(data => {
-        // Almacenar los datos en una variable global
-        window.bicicletas = data.bicicletas;
-        // Mostrar las bicicletas en la página
-        mostrarBicicletas();
-    })
-    .catch(error => console.error(error));
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    bicicletas: [],
+                    filtroModelo: "",
+                    filtroPrecio: 0
+                };
+            },
+            methods: {
+                cargarBicicletas() {
+                    fetch("data.json")
+                        .then(response => response.json())
+                        .then(data => {
+                            this.bicicletas = data.bicicletas;
+                        })
+                        .catch(error => console.error(error));
+                }
+            },
+            computed: {
+                bicicletasFiltradas() {
+                    return this.bicicletas.filter(bicicleta => {
+                        return (this.filtroModelo === "" || bicicleta.modelo === this.filtroModelo) &&
+                            (this.filtroPrecio === 0 || bicicleta.precio <= this.filtroPrecio);
+                    });
+                }
+            },
+            created() {
+                this.cargarBicicletas();
+            }
+        });
 
-// Función para mostrar las bicicletas en la página
-function mostrarBicicletas() {
-    const bicicletasContenedor = document.getElementById("bicicletas-contenedor");
-    bicicletasContenedor.innerHTML = "";
-
-    // Obtener los valores seleccionados en los filtros
-    const filtroModelo = document.getElementById("filtro-modelo").value;
-    const filtroPrecio = parseFloat(document.getElementById("filtro-precio").value);
-
-    console.log(filtroPrecio);
-
-    // Recorrer cada bicicleta
-    window.bicicletas.forEach(function (bicicleta) {
-        // Comprobar si la bicicleta cumple con los criterios de los filtros
-        if ((filtroModelo === "" || bicicleta.modelo === filtroModelo) && (filtroPrecio === 0 || bicicleta.precio <= filtroPrecio)
-        ) {
-            // Crear un elemento div para la bicicleta
-            const bicicletaDiv = document.createElement("div");
-            bicicletaDiv.classList.add("bicicleta");
-            // Crear una imagen para la bicicleta
-            const bicicletaImg = document.createElement("img");
-            bicicletaImg.src = bicicleta.img;
-            bicicletaImg.alt = bicicleta.modelo;
-            bicicletaDiv.appendChild(bicicletaImg);
-
-            // Crear un h3 para el nombre de la bicicleta
-            const bicicletaNombre = document.createElement("h3");
-            bicicletaNombre.innerHTML = bicicleta.nombre;
-            bicicletaDiv.appendChild(bicicletaNombre);
-
-            // Crear un p para el modelo de la bicicleta
-            const bicicletaModel = document.createElement("p");
-            bicicletaModel.innerHTML = bicicleta.modelo;
-            bicicletaDiv.appendChild(bicicletaModel);
-
-            // Crear un p para el precio de la bicicleta
-            const bicicletaPrice = document.createElement("p");
-            bicicletaPrice.innerHTML = "$"+bicicleta.precio;            
-            bicicletaDiv.appendChild(bicicletaPrice);
-
-            // Agregar el elemento div a la página
-            bicicletasContenedor.appendChild(bicicletaDiv);
-        }
-    });
-}
-
-// Agregar eventos a los filtros para que al cambiar su valor, se vuelva a mostrar las bicicletas
-document.getElementById("filtro-modelo").addEventListener("change", mostrarBicicletas);
-document.getElementById("filtro-precio").addEventListener("change", mostrarBicicletas);
-        </script>
-    </body>
-
+        app.mount("#app");
+    </script>
+</body>
 </html>
