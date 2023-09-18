@@ -1,77 +1,129 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  header {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-  
-  nav {
-    background-color: #FFA07A;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav li {
-    display: inline-block;
-    margin-right: 10px;
-  }
-  
-  nav a {
-    color: black;
-    text-decoration: none;
-    padding: 10px;
-  }
-  
-  nav a:hover {
-    background-color: #ff7f50;
-  }
-  
-  main {
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  section {
-    margin-bottom: 20px;
-    padding: 20px;
-    background-color: #ffb6c1;
-  }
-  
-  section h2 {
-    margin-top: 0;
-  }
-  
-  footer {
-    background-color: #8B0000;
-    color: white;
-    text-align: center;
-    padding: 10px;
-  }
-
-  
-  #bicicletas-contenedor {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
+header {
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+nav {
+  background-color: #FFA07A;
+  text-align: center;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+  padding: 10px;
+}
+
+nav a:hover {
+  background-color: #ff7f50;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: rgba(173, 216, 230, 0.7);
+  /* Azul celeste transparente */
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+footer {
+  background-color: #8B0000;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#bicicletas-contenedor {
+  display: grid;
+  grid-gap: 10px;
+}
+
+@media (min-width: 600px) {
+  #bicicletas-contenedor {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 columnas en pantallas de 600px o más */
+  }
+}
+
+@media (min-width: 1024px) {
+  #bicicletas-contenedor {
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columnas en pantallas grandes (1024px o más) */
+  }
+}
 
 .bicicleta {
-    width: 100%;
+  width: 100%;
+  text-align: center;
+  /* Centrar contenido */
 }
 
 .bicicleta img {
-    width: 100%;
-    object-fit: cover;
+  max-width: 100%;
+  /* Ajustar la imagen al ancho de su contenedor */
+  height: auto;
+  /* Mantener la proporción de la imagen */
+}
+
+/* Agrega un margen inferior a los elementos del encabezado en tamaño móvil */
+@media (max-width: 600px) {
+
+  header h1,
+  header nav {
+    margin-bottom: 10px;
+    /* Ajusta el valor según tu preferencia */
+  }
+}
+
+/* Agrega un margen inferior a "Camisetas personalizadas" en tamaño móvil */
+@media (max-width: 600px) {
+  header h1 {
+    margin-bottom: 20px;
+    /* Ajusta el valor según tu preferencia */
+  }
+}
+
+/* Redefine el tamaño de la letra y la separación en tamaño móvil */
+@media (max-width: 600px) {
+  nav ul {
+    padding-top: 20px;
+    /* Ajusta el valor según tu preferencia para la separación */
+  }
+
+  nav li {
+    margin-bottom: 10px;
+    /* Ajusta el valor según tu preferencia para la separación */
+  }
+
+  nav a {
+    font-size: 14px;
+    /* Ajusta el valor según tu preferencia para el tamaño de la letra */
+  }
 }
