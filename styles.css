@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 header {
@@ -133,5 +134,60 @@ footer {
   #bicicletas-contenedor {
     grid-template-columns: repeat(6, 1fr);
     /* 6 columnas en pantallas aún más grandes */
+  }
+}
+
+/* Asegura que las cajas ocupen todo el ancho disponible */
+nav ul li {
+  width: 100%;
+  display: block;
+}
+
+/* Ajusta el tamaño de fuente de las letras en pantallas grandes */
+@media (min-width: 1024px) {
+  .bicicleta {
+    font-size: 18px;
+    /* Ajusta el tamaño de fuente según tu preferencia */
+  }
+}
+
+/* Aumenta el tamaño de las cajas de las imágenes en pantallas grandes */
+@media (min-width: 1024px) {
+  .bicicleta {
+    width: 90%;
+    /* Reduzca el ancho al 90% en pantallas grandes */
+    text-align: center;
+  }
+}
+
+/* Asegura que las cajas ocupen todo el ancho disponible */
+nav ul li {
+  width: 100%;
+  display: block;
+}
+/* Aumenta el tamaño de fuente y ancho en pantallas grandes */
+@media (min-width: 1024px) {
+  .bicicleta {
+    font-size: 20px;
+    /* Ajusta el tamaño de fuente según tu preferencia */
+    width: 95%;
+    /* Reduzca el ancho al 95% en pantallas grandes */
+    text-align: center;
+  }
+}
+
+/* Aumenta el tamaño de fuente del encabezado en pantallas grandes */
+@media (min-width: 1024px) {
+  header h1 {
+    font-size: 36px;
+    /* Ajusta el tamaño de fuente según tu preferencia */
+  }
+}
+
+/* Aumenta el tamaño de fuente de la barra de navegación en pantallas grandes */
+@media (min-width: 1024px) {
+  nav ul {
+    font-size: 18px;
+    /* Ajusta el tamaño de fuente según tu preferencia */
   }
 }
