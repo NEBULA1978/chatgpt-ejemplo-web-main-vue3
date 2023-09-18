@@ -74,8 +74,8 @@ footer {
 
 @media (min-width: 1024px) {
   #bicicletas-contenedor {
-    grid-template-columns: repeat(3, 1fr);
-    /* 3 columnas en pantallas grandes (1024px o más) */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columnas en pantallas grandes (1024px o más) */
   }
 }
 
@@ -125,5 +125,13 @@ footer {
   nav a {
     font-size: 14px;
     /* Ajusta el valor según tu preferencia para el tamaño de la letra */
+  }
+}
+
+/* Agrega 6 columnas en pantallas aún más grandes (mayores a 1400px, por ejemplo) */
+@media (min-width: 1400px) {
+  #bicicletas-contenedor {
+    grid-template-columns: repeat(6, 1fr);
+    /* 6 columnas en pantallas aún más grandes */
   }
 }
